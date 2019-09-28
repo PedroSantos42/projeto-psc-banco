@@ -1,24 +1,57 @@
 package model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 import contract.IEndereco;
 
+@Entity(name = "Endereco")
+@Table(name = "endereco")
 public class Endereco implements IEndereco {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_endereco")
 	private int id;
+
+	@Column(nullable = false)
 	private String logradouro;
+
+	@Column(nullable = false)
 	private int numero;
+
+	@Column(nullable = true)
 	private String complemento;
+
+	@Column(nullable = false)
 	private String bairro;
+
+	@Column(nullable = false)
 	private String cidade;
+
+	@Column(nullable = false)
 	private String uf;
+
+	@Column(nullable = false)
 	private String cep;
 
+	@OneToOne(
+			mappedBy = "endereco",
+			cascade = CascadeType.ALL)
+	private Pessoa pessoa;
+	
 	public Endereco() {
 	}
 
-	public Endereco(int id, String logradouro, int numero, String complemento, String bairro, String cidade, String uf, String cep) {
+	public Endereco(String logradouro, int numero, String complemento, String bairro, String cidade, String uf,
+			String cep) {
 		super();
-		this.id = id;
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.complemento = complemento;
@@ -91,9 +124,21 @@ public class Endereco implements IEndereco {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
+	
+	public Pessoa getCustomer() {
+		return pessoa;
+	}
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+		pessoa.setEndereco(this);
+	}
 
 	public Object getPrimaryKey() {
 		return getId();
 	}
 
+	public String toString() {
+		return "ID: " + getId() + ", Logradouro: " + getLogradouro() + ", " + getNumero();
+	}
 }
