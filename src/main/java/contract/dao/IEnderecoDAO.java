@@ -1,4 +1,4 @@
-package contract;
+package contract.dao;
 
 public interface IEnderecoDAO {
 
