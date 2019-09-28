@@ -1,6 +1,6 @@
 package dao;
 
-import contract.IEnderecoDAO;
+import contract.dao.IEnderecoDAO;
 
 public class EnderecoDAO extends AbstractDAO implements IEnderecoDAO {
 
