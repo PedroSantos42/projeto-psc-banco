@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import contract.IEndereco;
+import contract.models.IEndereco;
 
 @Entity(name = "Endereco")
 @Table(name = "endereco")
@@ -138,7 +138,10 @@ public class Endereco implements IEndereco {
 		return getId();
 	}
 
+	@Override
 	public String toString() {
-		return "ID: " + getId() + ", Logradouro: " + getLogradouro() + ", " + getNumero();
+		return "Endereco [id=" + id + ", logradouro=" + logradouro + ", numero=" + numero + ", complemento="
+				+ complemento + ", bairro=" + bairro + ", cidade=" + cidade + ", uf=" + uf + ", cep=" + cep
+				+ ", pessoa=" + pessoa + "]";
 	}
 }
