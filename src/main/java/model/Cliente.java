@@ -12,7 +12,8 @@ import contract.models.ICliente;
 @DiscriminatorColumn(name = "PessoaCliente")
 public class Cliente extends Pessoa implements ICliente {
 
-	@Column(nullable = false)
+	@Column(name = "data_cadastro",
+			nullable = false)
 	private Date dataCadastro;
 
 	public Cliente() {

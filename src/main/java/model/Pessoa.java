@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 
 import contract.models.IPessoa;
 
-@Entity
+@Entity(name = "Pessoa")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo_pessoa")
 public class Pessoa implements IPessoa {
