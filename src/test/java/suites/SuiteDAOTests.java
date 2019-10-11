@@ -8,12 +8,16 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import dao.EnderecoDAOTests;
 import util.UtilJPA;
-import dao.ClienteDAOTests;;
+import dao.ClienteDAOTests;
+import dao.ContaCorrenteDAOTests;
+import dao.ContaPoupancaDAOTests;;
 
 @RunWith(Suite.class)
 @SuiteClasses({
 	EnderecoDAOTests.class,
-	ClienteDAOTests.class
+	ClienteDAOTests.class,
+	ContaCorrenteDAOTests.class,
+	ContaPoupancaDAOTests.class
 	})
 public class SuiteDAOTests {
 
