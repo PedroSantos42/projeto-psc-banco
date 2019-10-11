@@ -48,11 +48,11 @@ public class MyLogger {
 
 	@SuppressWarnings("deprecation")
 	public String formatDate(Date date) {
-		String formatedDate = String.valueOf(date.getDay()) + "/";
-		formatedDate += String.valueOf(date.getMonth()) + "/";
-		formatedDate += String.valueOf(date.getYear() + 1900) + " ";
-		formatedDate += String.valueOf(date.getHours()) + ":";
-		formatedDate += String.valueOf(date.getMinutes()) + ":";
+		String formatedDate = String.valueOf(date.getDay()) 	+ "/";
+		formatedDate += String.valueOf(date.getMonth()) 		+ "/";
+		formatedDate += String.valueOf(date.getYear() + 1900) 	+ " ";
+		formatedDate += String.valueOf(date.getHours()) 		+ ":";
+		formatedDate += String.valueOf(date.getMinutes()) 		+ ":";
 		formatedDate += String.valueOf(date.getSeconds());
 		
 		return formatedDate;
