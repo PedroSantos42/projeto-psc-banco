@@ -53,7 +53,7 @@ public class MyLogger {
 		formatedDate += String.valueOf(date.getYear() + 1900) 	+ " ";
 		formatedDate += String.valueOf(date.getHours()) 		+ ":";
 		formatedDate += String.valueOf(date.getMinutes()) 		+ ":";
-		formatedDate += String.valueOf(date.getSeconds());
+		formatedDate += date.getSeconds() < 10 ? "0" + String.valueOf(date.getSeconds()) : String.valueOf(date.getSeconds());
 		
 		return formatedDate;
 	}
