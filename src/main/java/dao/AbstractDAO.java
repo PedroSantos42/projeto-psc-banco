@@ -69,7 +69,7 @@ public class AbstractDAO implements IDAO {
 	}
 	
 	private IEntity listByPrimaryKey(Class myClass, Object myPrimaryKey, EntityManager em, boolean closeEm) {
-		IEntity entity = em.find(
+		IEntity entity = (IEntity) em.find(
 				myClass,
 				myPrimaryKey
 				);
