@@ -15,13 +15,13 @@ public class EnderecoDAOTests {
 	
 	@BeforeClass
 	public static void setUp() {
-		System.out.println("Iniciando testes...");
+		System.out.println("Iniciando EnderecoDAO testes...");
 		UtilJPA.createEntityManagerFactory();
 	}
 	
 	@AfterClass
 	public static void tearDown() {
-		System.out.println("Finalizando testes...");
+		System.out.println("Finalizando EnderecoDAO testes...");
 //		UtilJPA.closeEntityManagerFactory();
 	}
 	

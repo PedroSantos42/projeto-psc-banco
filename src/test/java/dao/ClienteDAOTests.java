@@ -15,12 +15,12 @@ public class ClienteDAOTests {
 	private ClienteDAO _dao = new ClienteDAO();
 	
 	public static void setUp() {
-		System.out.println("Iniciando testes...");
+		System.out.println("Iniciando ClienteDAO testes...");
 		UtilJPA.createEntityManagerFactory();
 	}
 	
 	public static void tearDown() {
-		System.out.println("Finalizando testes...");
+		System.out.println("Finalizando ClienteDAO testes...");
 //		UtilJPA.closeEntityManagerFactory();
 	}
 	
