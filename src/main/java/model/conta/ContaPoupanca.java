@@ -1,12 +1,12 @@
-package model;
+package model.conta;
 
-//import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 
-import contract.models.IContaPoupanca;
+import contract.models.conta.IContaPoupanca;
 
 @Entity(name = "ContaPoupanca")
-//@DiscriminatorColumn(name = "ContaPoupanca")
+@DiscriminatorColumn(name = "ContaPoupanca")
 public class ContaPoupanca extends Conta implements IContaPoupanca {
 
 	public ContaPoupanca() {

@@ -1,4 +1,4 @@
-package contract.models;
+package contract.models.conta;
 
 import contract.IEntity;
 

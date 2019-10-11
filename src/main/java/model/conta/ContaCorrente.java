@@ -1,15 +1,14 @@
-package model;
+package model.conta;
 
-//import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 
-import contract.models.IContaCorrente;
+import contract.models.conta.IContaCorrente;
 
 @Entity(name = "ContaCorrente")
-//@DiscriminatorColumn(name = "ContaCorrente")
+@DiscriminatorColumn(name = "ContaCorrente")
 public class ContaCorrente extends Conta implements IContaCorrente {
 	
-
 	public ContaCorrente() {
 		super();
 	}

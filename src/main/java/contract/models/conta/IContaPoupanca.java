@@ -1,4 +1,4 @@
-package contract.models;
+package contract.models.conta;
 
 public interface IContaPoupanca extends IConta {
 

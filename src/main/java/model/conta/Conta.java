@@ -1,4 +1,4 @@
-package model;
+package model.conta;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
@@ -10,16 +10,16 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
-import contract.models.IConta;
+import contract.models.conta.IConta;
 
 @Entity (name = "Conta")
-@Table(name = "contas")
+@Table(name = "conta")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo_conta")
 public class Conta implements IConta {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_conta")
 	private int id;
 	
