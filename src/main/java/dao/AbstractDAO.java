@@ -4,15 +4,26 @@ import javax.persistence.EntityManager;
 
 import contract.IDAO;
 import contract.IEntity;
+import util.LoggerDAO;
+import util.MyStrings;
 import util.UtilJPA;
 
 public class AbstractDAO implements IDAO {
 
+	private LoggerDAO _logger = new LoggerDAO().getInstance();
+	private String className, methodName, loggerInfo;
+	
 	public void add(IEntity myEntity) {
 		add(myEntity, UtilJPA.getEntityManager(), true);
 	}
 	
 	private void add(IEntity myEntity, EntityManager em, boolean closeEm) {
+		//logging
+		className = this.getClass().getSimpleName();
+		methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		loggerInfo = className + "." + methodName + " - " + myEntity.toString();
+		_logger.log(loggerInfo);
+		
 		em.getTransaction().begin();
 		em.persist(myEntity);
 		em.getTransaction().commit();
@@ -26,6 +37,12 @@ public class AbstractDAO implements IDAO {
 	}
 	
 	private void update(IEntity myEntity, EntityManager em, boolean closeEm) {
+		//logging
+		className = this.getClass().getSimpleName();
+		methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		loggerInfo = className + "." + methodName + " - " + myEntity.toString();
+		_logger.log(loggerInfo);
+		
 		em.getTransaction().begin();
 		em.merge(myEntity);
 		em.getTransaction().commit();
@@ -39,6 +56,12 @@ public class AbstractDAO implements IDAO {
 	}
 	
 	private void removeByPrimaryKey(IEntity myEntity, EntityManager em, boolean closeEm) {
+		//logging
+		className = this.getClass().getSimpleName();
+		methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		loggerInfo = className + "." + methodName + " - " + myEntity.toString();
+		_logger.log(loggerInfo);
+		
 		em.getTransaction().begin();
 		
 		IEntity entity = (IEntity) em.find(myEntity.getClass(), myEntity.getPrimaryKey());
@@ -56,6 +79,12 @@ public class AbstractDAO implements IDAO {
 	}
 	
 	private void removeByObject(IEntity myEntity, EntityManager em, boolean closeEm) {
+		//logging
+		className = this.getClass().getSimpleName();
+		methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		loggerInfo = className + "." + methodName + " - " + myEntity.toString();
+		_logger.log(loggerInfo);
+		
 		em.getTransaction().begin();
 		em.remove(em.contains(myEntity) ? myEntity : em.merge(myEntity));
 		em.getTransaction().commit();
@@ -69,6 +98,12 @@ public class AbstractDAO implements IDAO {
 	}
 	
 	private IEntity listByPrimaryKey(Class myClass, Object myPrimaryKey, EntityManager em, boolean closeEm) {
+		//logging
+		className = this.getClass().getSimpleName();
+		methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		loggerInfo = className + "." + methodName + " - " + myClass.getSimpleName() + ", PK: " + myPrimaryKey.toString();
+		_logger.log(loggerInfo);
+		
 		IEntity entity = (IEntity) em.find(
 				myClass,
 				myPrimaryKey
@@ -85,6 +120,12 @@ public class AbstractDAO implements IDAO {
 	}
 	
 	private IEntity listByObject(IEntity myEntity, EntityManager em, boolean closeEm) {
+		//logging
+		className = this.getClass().getSimpleName();
+		methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+		loggerInfo = className + "." + methodName + " - " + myEntity.toString();
+		_logger.log(loggerInfo);
+		
 		IEntity entity = (IEntity) em.find(
 				myEntity.getClass(),
 				myEntity.getPrimaryKey()
