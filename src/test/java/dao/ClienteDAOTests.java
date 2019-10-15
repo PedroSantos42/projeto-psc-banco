@@ -6,8 +6,9 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import model.Cliente;
+import dao.pessoa.ClienteDAO;
 import model.Endereco;
+import model.pessoa.Cliente;
 import util.UtilJPA;
 
 public class ClienteDAOTests {

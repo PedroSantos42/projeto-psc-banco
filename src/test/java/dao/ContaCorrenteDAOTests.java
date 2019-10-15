@@ -7,8 +7,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import dao.conta.ContaCorrenteDAO;
-import model.Pessoa;
+import dao.pessoa.ClienteDAO;
 import model.conta.ContaCorrente;
+import model.pessoa.Pessoa;
 import util.UtilJPA;
 
 public class ContaCorrenteDAOTests {
