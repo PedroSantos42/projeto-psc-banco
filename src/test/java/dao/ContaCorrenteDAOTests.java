@@ -2,11 +2,14 @@ package dao;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Date;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import dao.conta.ContaCorrenteDAO;
+import model.Pessoa;
 import model.conta.ContaCorrente;
 import util.UtilJPA;
 
@@ -33,13 +36,39 @@ public class ContaCorrenteDAOTests {
 		double saldo = 100.0;
 		String situacao = "a";
 		
-		ContaCorrente conta = new ContaCorrente(id, numeroConta, saldo, situacao);
+		Pessoa p = new Pessoa();
+		p.setId(1);
+		p = (Pessoa) new ClienteDAO().listByPrimaryKey(p.getClass(), p.getPrimaryKey());
+		
+		ContaCorrente conta = new ContaCorrente(id, numeroConta, saldo, situacao, p);
 		
 		// act
 		_dao.add(conta);
 		
 		ContaCorrente conta2 = (ContaCorrente) _dao.listByObject(conta);
 		
+		// assert
+		assertEquals(conta.toString(), conta2.toString());
+	}
+	
+	@Test
+	public void add_SecondAccountToSamePerson_MaintainSinglePessoaRecord() {
+		// arrange
+		int id = 2;
+		int numeroConta = 2;
+		double saldo = 250;
+		String situacao = "b";
+		
+		Pessoa p = new Pessoa();
+		p.setId(1);
+		p = (Pessoa) new ClienteDAO().listByPrimaryKey(p.getClass(), p.getPrimaryKey());
+		
+		ContaCorrente conta = new ContaCorrente(id, numeroConta, saldo, situacao, p);
+		
+		// act
+		_dao.add(conta);
+		
+		ContaCorrente conta2 = (ContaCorrente) _dao.listByObject(conta);
 		// assert
 		assertEquals(conta.toString(), conta2.toString());
 	}

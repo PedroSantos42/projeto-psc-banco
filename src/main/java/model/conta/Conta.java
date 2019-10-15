@@ -8,9 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import contract.models.conta.IConta;
+import model.Pessoa;
 
 @Entity (name = "Conta")
 @Table(name = "conta")
@@ -32,17 +35,22 @@ public class Conta implements IConta {
 	
 	@Column(nullable = false)
 	private String situacao;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_pessoa", nullable = false)
+	private Pessoa pessoa;
 
 	public Conta() {
 		super();
 	}
 
-	public Conta(int id, int numeroConta, double saldo, String situacao) {
+	public Conta(int id, int numeroConta, double saldo, String situacao, Pessoa pessoa) {
 		super();
 		this.id = id;
 		this.numeroConta = numeroConta;
 		this.saldo = saldo;
 		this.situacao = situacao;
+		this.pessoa = pessoa;
 	}
 
 	public int getId() {

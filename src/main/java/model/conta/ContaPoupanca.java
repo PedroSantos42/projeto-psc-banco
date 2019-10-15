@@ -4,6 +4,7 @@ import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 
 import contract.models.conta.IContaPoupanca;
+import model.Pessoa;
 
 @Entity(name = "ContaPoupanca")
 @DiscriminatorColumn(name = "ContaPoupanca")
@@ -13,8 +14,8 @@ public class ContaPoupanca extends Conta implements IContaPoupanca {
 		super();
 	}
 
-	public ContaPoupanca(int id, int numeroConta, double saldo, String situacao) {
-		super(id, numeroConta, saldo, situacao);
+	public ContaPoupanca(int id, int numeroConta, double saldo, String situacao, Pessoa pessoa) {
+		super(id, numeroConta, saldo, situacao, pessoa);
 	}
 
 	@Override
