@@ -8,7 +8,9 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import dao.conta.ContaCorrenteDAO;
 import dao.transacao.EmprestimoDAO;
+import model.conta.Conta;
 import model.transacao.Emprestimo;;
 
 public class EmprestimoDAOTests {
@@ -32,7 +34,13 @@ public class EmprestimoDAOTests {
 		int numeroConta = 1;
 		float valorTransacao = 400f;
 		Date dataTransacao = new Date();
-		Emprestimo e = new Emprestimo(id, numeroConta, valorTransacao, dataTransacao);
+		
+		Conta conta = new Conta();
+		
+		conta.setId(1);
+		conta = (Conta) new ContaCorrenteDAO().listByPrimaryKey(conta.getClass(), conta.getPrimaryKey());
+		
+		Emprestimo e = new Emprestimo(id, numeroConta, valorTransacao, dataTransacao, conta);
 
 		// act
 		_dao.add(e);

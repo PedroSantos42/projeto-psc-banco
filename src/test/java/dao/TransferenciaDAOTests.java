@@ -8,7 +8,9 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import dao.conta.ContaCorrenteDAO;
 import dao.transacao.TransferenciaDAO;
+import model.conta.Conta;
 import model.transacao.Transferencia;
 
 public class TransferenciaDAOTests {
@@ -33,7 +35,13 @@ public class TransferenciaDAOTests {
 		int numeroConta = 1;
 		float valorTransacao = 25.90f;
 		Date dataTransacao = new Date();
-		Transferencia t = new Transferencia(id, numeroConta, valorTransacao, dataTransacao);
+		
+		Conta conta = new Conta();
+		conta.setId(1);
+		
+		conta = (Conta) new ContaCorrenteDAO().listByPrimaryKey(conta.getClass(), conta.getPrimaryKey());
+		
+		Transferencia t = new Transferencia(id, numeroConta, valorTransacao, dataTransacao, conta);
 
 		// act
 		_dao.add(t);

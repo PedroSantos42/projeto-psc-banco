@@ -7,12 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Column;
 
 import java.util.Date;
 
 import contract.models.transacao.ITransacao;
+import model.conta.Conta;
 
 @Entity(name = "Transacao")
 @Table(name = "transacao")
@@ -34,14 +37,19 @@ public class Transacao implements ITransacao {
 	@Column (name = "data_transacao", nullable = false)
 	private Date dataTransacao;
 	
+	@ManyToOne
+	@JoinColumn(name = "id_conta", nullable = false)
+	private Conta conta;
+	
 	public Transacao () {}
 	
-	public Transacao (int id, int numeroConta, float valorTransacao, Date dataTransacao) {
+	public Transacao (int id, int numeroConta, float valorTransacao, Date dataTransacao, Conta conta) {
 		super();
 		this.id = id;
 		this.numeroConta = numeroConta;
 		this.valorTransacao = valorTransacao;
 		this.dataTransacao = dataTransacao;
+		this.conta = conta;
 	}
 
 	public int getId() {
@@ -74,6 +82,14 @@ public class Transacao implements ITransacao {
 
 	public void setDataTransacao(Date dataTransacao) {
 		this.dataTransacao = dataTransacao;
+	}
+
+	public Conta getConta() {
+		return conta;
+	}
+
+	public void setConta(Conta conta) {
+		this.conta = conta;
 	}
 
 	public Object getPrimaryKey() {
