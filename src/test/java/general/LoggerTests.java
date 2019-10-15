@@ -45,7 +45,7 @@ public class LoggerTests {
 		
 		stream = Files.lines(Paths.get(MyStrings.LOGGER_SOURCE_FILE), StandardCharsets.UTF_8);
 		
-		stream.forEach(s -> contentBuilder.append(s));
+//		stream.forEach(s -> contentBuilder.append(s));
 		
 		// assert
 		assertEquals(message, contentBuilder.toString().substring(contentBuilder.toString().indexOf(message.charAt(0))));

@@ -7,10 +7,12 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import dao.EnderecoDAOTests;
+import dao.TransferenciaDAOTests;
 import util.UtilJPA;
 import dao.ClienteDAOTests;
 import dao.ContaCorrenteDAOTests;
-import dao.ContaPoupancaDAOTests;;
+import dao.ContaPoupancaDAOTests;
+import dao.EmprestimoDAOTests;;
 
 @RunWith(Suite.class)
 @SuiteClasses({
@@ -18,6 +20,8 @@ import dao.ContaPoupancaDAOTests;;
 	ClienteDAOTests.class,
 	ContaCorrenteDAOTests.class,
 	ContaPoupancaDAOTests.class
+//	EmprestimoDAOTests.class,
+//	TransferenciaDAOTests.class
 	})
 public class SuiteDAOTests {
 
