@@ -38,7 +38,7 @@ public class ContaPoupancaDAOTests {
 		p.setId(1);
 		p = (Pessoa) new ClienteDAO().listByPrimaryKey(p.getClass(), p.getPrimaryKey());
 		
-		ContaPoupanca conta = new ContaPoupanca(id, numeroConta, saldo, situacao, p);
+		ContaPoupanca conta = new ContaPoupanca(id, numeroConta, saldo, situacao, p, null);
 		
 		// act
 		_dao.add(conta);

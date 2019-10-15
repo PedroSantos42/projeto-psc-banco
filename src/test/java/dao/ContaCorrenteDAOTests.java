@@ -2,8 +2,6 @@ package dao;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.Date;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -40,7 +38,7 @@ public class ContaCorrenteDAOTests {
 		p.setId(1);
 		p = (Pessoa) new ClienteDAO().listByPrimaryKey(p.getClass(), p.getPrimaryKey());
 		
-		ContaCorrente conta = new ContaCorrente(id, numeroConta, saldo, situacao, p);
+		ContaCorrente conta = new ContaCorrente(id, numeroConta, saldo, situacao, p, null);
 		
 		// act
 		_dao.add(conta);
@@ -63,7 +61,7 @@ public class ContaCorrenteDAOTests {
 		p.setId(1);
 		p = (Pessoa) new ClienteDAO().listByPrimaryKey(p.getClass(), p.getPrimaryKey());
 		
-		ContaCorrente conta = new ContaCorrente(id, numeroConta, saldo, situacao, p);
+		ContaCorrente conta = new ContaCorrente(id, numeroConta, saldo, situacao, p, null);
 		
 		// act
 		_dao.add(conta);
