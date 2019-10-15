@@ -6,19 +6,19 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
 
-public class MyLogger {
+public class LoggerDAO {
 
 	private File _file;
 	private FileOutputStream _fop;
 
-	private static MyLogger Logger;
-
-	public MyLogger getInstance(String sourcePath) {
+	private static LoggerDAO Logger;
+	
+	public LoggerDAO getInstance() {
 		if (Logger == null) {
-			MyLogger.Logger = new MyLogger();
-			init(sourcePath);
+			LoggerDAO.Logger = new LoggerDAO();
+			init(MyStrings.LOGGER_SOURCE_FILE);
 		}
-		return MyLogger.Logger;
+		return LoggerDAO.Logger;
 	}
 
 	private void init(String path) {
@@ -48,8 +48,8 @@ public class MyLogger {
 
 	@SuppressWarnings("deprecation")
 	public String formatDate(Date date) {
-		String formatedDate = String.valueOf(date.getDay()) 	+ "/";
-		formatedDate += String.valueOf(date.getMonth()) 		+ "/";
+		String formatedDate = date.getDate() < 10 ? "0" + String.valueOf(date.getDate()) : String.valueOf(date.getDate()) + "/";
+		formatedDate += String.valueOf(date.getMonth() + 1)		+ "/";
 		formatedDate += String.valueOf(date.getYear() + 1900) 	+ " ";
 		formatedDate += String.valueOf(date.getHours()) 		+ ":";
 		formatedDate += String.valueOf(date.getMinutes()) 		+ ":";
