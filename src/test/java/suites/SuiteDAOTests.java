@@ -19,9 +19,9 @@ import dao.EmprestimoDAOTests;;
 	EnderecoDAOTests.class,
 	ClienteDAOTests.class,
 	ContaCorrenteDAOTests.class,
-	ContaPoupancaDAOTests.class
-//	EmprestimoDAOTests.class,
-//	TransferenciaDAOTests.class
+	ContaPoupancaDAOTests.class,
+	EmprestimoDAOTests.class,
+	TransferenciaDAOTests.class
 	})
 public class SuiteDAOTests {
 

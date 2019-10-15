@@ -6,12 +6,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import general.LoggerTests;
+import general.LoggerDAOTests;
 
 @RunWith(Suite.class)
 @SuiteClasses({
 	SuiteDAOTests.class,
-	LoggerTests.class
+	LoggerDAOTests.class
 })
 public class SuiteAllTests {
 

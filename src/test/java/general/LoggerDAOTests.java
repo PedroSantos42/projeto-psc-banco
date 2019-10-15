@@ -13,19 +13,18 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import util.MyLogger;
+import util.LoggerDAO;
 import util.MyStrings;
 
-public class LoggerTests {
+public class LoggerDAOTests {
 
-	private static MyLogger _logger;
+	private static LoggerDAO _logger;
 	private Stream<String> stream;
 	
 	@BeforeClass
 	public static void setUp() {
 		System.out.println("Iniciando Logger testes...");
-		_logger = new MyLogger();
-		_logger.getInstance(MyStrings.LOGGER_SOURCE_FILE);
+		_logger = new LoggerDAO();
 	}
 	
 	@AfterClass
@@ -45,7 +44,7 @@ public class LoggerTests {
 		
 		stream = Files.lines(Paths.get(MyStrings.LOGGER_SOURCE_FILE), StandardCharsets.UTF_8);
 		
-//		stream.forEach(s -> contentBuilder.append(s));
+		stream.forEach(s -> contentBuilder.append(s));
 		
 		// assert
 		assertEquals(message, contentBuilder.toString().substring(contentBuilder.toString().indexOf(message.charAt(0))));
