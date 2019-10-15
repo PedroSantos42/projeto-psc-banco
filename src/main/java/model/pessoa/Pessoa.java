@@ -1,4 +1,4 @@
-package model;
+package model.pessoa;
 
 import java.util.Date;
 import java.util.List;
@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import contract.models.IPessoa;
+import model.Endereco;
 import model.conta.Conta;
 
 @Entity(name = "Pessoa")

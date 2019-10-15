@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import contract.models.conta.IConta;
-import model.Pessoa;
+import model.pessoa.Pessoa;
 import model.transacao.Transacao;
 
 @Entity(name = "Conta")

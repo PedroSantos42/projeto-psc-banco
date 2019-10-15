@@ -6,7 +6,7 @@ import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 
 import contract.models.conta.IContaPoupanca;
-import model.Pessoa;
+import model.pessoa.Pessoa;
 import model.transacao.Transacao;
 
 @Entity(name = "ContaPoupanca")

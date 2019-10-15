@@ -1,4 +1,4 @@
-package model;
+package model.pessoa;
 
 import java.util.Date;
 
@@ -7,13 +7,13 @@ import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 
 import contract.models.ICliente;
+import model.Endereco;
 
 @Entity(name = "Cliente")
 @DiscriminatorColumn(name = "PessoaCliente")
 public class Cliente extends Pessoa implements ICliente {
 
-	@Column(name = "data_cadastro",
-			nullable = false)
+	@Column(name = "data_cadastro", nullable = false)
 	private Date dataCadastro;
 
 	public Cliente() {

@@ -10,6 +10,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import contract.models.IEndereco;
+import model.pessoa.Pessoa;
 
 @Entity(name = "Endereco")
 @Table(name = "endereco")
@@ -124,7 +125,7 @@ public class Endereco implements IEndereco {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-	
+
 	public Pessoa getCustomer() {
 		return pessoa;
 	}
