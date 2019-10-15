@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,9 +10,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import contract.models.IPessoa;
+import model.conta.Conta;
 
 @Entity(name = "Pessoa")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -34,6 +37,9 @@ public class Pessoa implements IPessoa {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private Endereco endereco;
+	
+	@OneToMany(mappedBy = "pessoa")
+	private List<Conta> contas;
 	
 	public Pessoa() {}
 
@@ -87,10 +93,17 @@ public class Pessoa implements IPessoa {
 		endereco.setPessoa(this);
 	}
 	
+	public List<Conta> getContas() {
+		return contas;
+	}
+
+	public void setContas(List<Conta> contas) {
+		this.contas = contas;
+	}
+
 	@Override
 	public String toString() {
-		return "Pessoa [id=" + id + ", cpf=" + cpf + ", nome=" + nome + ", dataNascimento=" + dataNascimento
-				+ ", endereco=" + endereco + "]";
+		return "Pessoa [id=" + id + ", cpf=" + cpf + ", nome=" + nome + ", dataNascimento=" + dataNascimento + "]";
 	}
 
 	public Object getPrimaryKey() {
