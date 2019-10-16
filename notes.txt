@@ -1,0 +1,7 @@
+ajustes:
+
+Cliente:
+- alterar conta para UNIQUE
+
+Fachada:
+- entre camadas de Controller e View, deve filtrar métodos disponíveis para o usuário

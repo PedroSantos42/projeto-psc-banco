@@ -50,4 +50,49 @@ public class EmprestimoDAOTests {
 		// assert
 		assertEquals(e.toString(), e2.toString());
 	}
+	
+	@Test
+	public void listByObject_ValidArg_ReturnValidRecord() {
+		// arrange
+		
+		// act
+		
+		// assert
+	}
+	
+	@Test
+	public void listByPrimaryKey_ValidArg_ReturnValidRecord() {
+		// arrange
+		
+		// act
+		
+		// assert
+	}
+	
+	@Test
+	public void removeByObject_ValidArg_RemoveRecordFromDatabase() {
+		// arrange
+		
+		// act
+		
+		// assert
+	}
+	
+	@Test
+	public void removeByPrimaryKey_ValidArg_RemoveRecordFromDatabase() {
+		// arrange
+		
+		// act
+		
+		// assert
+	}
+	
+	@Test
+	public void update_ValidArg_UpdateRecordInDatabase() {
+		// arrange
+		
+		// act
+		
+		// assert
+	}
 }
