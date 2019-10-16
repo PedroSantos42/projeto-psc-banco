@@ -5,13 +5,12 @@ import javax.persistence.EntityManager;
 import contract.IDAO;
 import contract.IEntity;
 import util.LoggerDAO;
-import util.MyStrings;
 import util.UtilJPA;
 
 public class AbstractDAO implements IDAO {
 
-	private LoggerDAO _logger = new LoggerDAO().getInstance();
-	private String className, methodName, loggerInfo;
+	protected LoggerDAO _logger = new LoggerDAO().getInstance();
+	protected String className, methodName, loggerInfo;
 	
 	public void add(IEntity myEntity) {
 		add(myEntity, UtilJPA.getEntityManager(), true);
