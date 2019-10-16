@@ -36,7 +36,7 @@ public class LoggerDAO {
 	}
 	
 	public void log(String message) {
-		byte[] contentInBytes = (this.formatDate(new Date()) + " - " + message + "\n").getBytes();
+		byte[] contentInBytes = (this.formatDate(new Date()) + " - ["+ System.getProperty("user.name") + "] : " + message + "\n").getBytes();
 
 		try {
 			Logger._fop.write(contentInBytes);
