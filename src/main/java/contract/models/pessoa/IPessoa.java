@@ -1,4 +1,4 @@
-package contract.models;
+package contract.models.pessoa;
 
 import contract.IEntity;
 

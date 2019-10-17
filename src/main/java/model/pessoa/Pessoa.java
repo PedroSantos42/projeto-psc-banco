@@ -12,12 +12,14 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-import contract.models.IPessoa;
+import contract.models.pessoa.IPessoa;
 import model.Endereco;
 import model.conta.Conta;
 
 @Entity(name = "Pessoa")
+@Table(name = "pessoa")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo_pessoa")
 public class Pessoa implements IPessoa {
