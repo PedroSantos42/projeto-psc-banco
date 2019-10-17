@@ -20,7 +20,6 @@ import util.UtilJPA;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ClienteDAOTests {
 
-	private static final String List = null;
 	private ClienteDAO _dao = new ClienteDAO();
 
 	public static void setUp() {

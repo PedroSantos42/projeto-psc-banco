@@ -13,7 +13,7 @@ import model.Endereco;
 @DiscriminatorColumn(name = "PessoaCliente")
 public class Cliente extends Pessoa implements ICliente {
 
-	@Column(name = "data_cadastro", nullable = false)
+	@Column(name = "data_cadastro", nullable = true)
 	private Date dataCadastro;
 
 	public Cliente() {

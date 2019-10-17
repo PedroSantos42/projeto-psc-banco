@@ -26,10 +26,15 @@ public class ClienteDAO extends AbstractDAO implements IClienteDAO {
 		loggerInfo = className + "." + methodName + " - " + myEntity.toString();
 		_logger.log(loggerInfo);
 
-		String sQuery = "from Pessoa";
+		String sQuery = "FROM Pessoa WHERE tipo_pessoa = 'Cliente'";
 		
 		TypedQuery<Pessoa> tQuery = em.createQuery(sQuery, Pessoa.class);
 		
-		return (List<Cliente>) ((List<?>)tQuery.getResultList());
+		List<Cliente> records = (List<Cliente>) ((List<?>)tQuery.getResultList());
+		
+		if (closeEm)
+			em.close();
+		
+		return records;
 	}
 }
