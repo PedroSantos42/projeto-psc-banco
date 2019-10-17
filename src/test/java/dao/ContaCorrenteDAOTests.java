@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import dao.conta.ContaCorrenteDAO;
 import dao.pessoa.ClienteDAO;
+import org.junit.Ignore;
 import model.conta.ContaCorrente;
 import model.pessoa.Pessoa;
 import util.UtilJPA;
@@ -72,6 +73,7 @@ public class ContaCorrenteDAOTests {
 		assertEquals(conta.toString(), conta2.toString());
 	}
 	
+	@Ignore
 	@Test
 	public void listByObject_ValidArg_ReturnValidRecord() {
 		// arrange
@@ -80,7 +82,8 @@ public class ContaCorrenteDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void listByPrimaryKey_ValidArg_ReturnValidRecord() {
 		// arrange
@@ -89,7 +92,8 @@ public class ContaCorrenteDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void removeByObject_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
@@ -98,7 +102,8 @@ public class ContaCorrenteDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void removeByPrimaryKey_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
@@ -107,7 +112,8 @@ public class ContaCorrenteDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void update_ValidArg_UpdateRecordInDatabase() {
 		// arrange

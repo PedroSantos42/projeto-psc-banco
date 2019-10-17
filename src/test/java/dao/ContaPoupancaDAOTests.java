@@ -4,10 +4,12 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import dao.conta.ContaPoupancaDAO;
 import dao.pessoa.ClienteDAO;
+
 import model.conta.ContaPoupanca;
 import model.pessoa.Pessoa;
 import util.UtilJPA;
@@ -49,7 +51,8 @@ public class ContaPoupancaDAOTests {
 		// assert
 		assertEquals(conta.toString(), conta2.toString());
 	}
-	
+
+	@Ignore
 	@Test
 	public void listByObject_ValidArg_ReturnValidRecord() {
 		// arrange
@@ -58,7 +61,8 @@ public class ContaPoupancaDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void listByPrimaryKey_ValidArg_ReturnValidRecord() {
 		// arrange
@@ -67,7 +71,8 @@ public class ContaPoupancaDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void removeByObject_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
@@ -76,7 +81,8 @@ public class ContaPoupancaDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void removeByPrimaryKey_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
@@ -85,7 +91,8 @@ public class ContaPoupancaDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void update_ValidArg_UpdateRecordInDatabase() {
 		// arrange
