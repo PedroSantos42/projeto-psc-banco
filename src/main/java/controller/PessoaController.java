@@ -12,8 +12,9 @@ public class PessoaController implements IPessoaController {
 	private ClienteDAO _clienteDAO = new ClienteDAO();
 	private FuncionarioDAO _funcionarioDAO = new FuncionarioDAO();
 	
-	// ENTIDADE CLIENTE
-	
+	/**********************
+	 * ENTIDADE CLIENTE
+	 */
 	public void addCliente(Cliente cliente) {
 		_clienteDAO.add(cliente);
 	}
@@ -42,17 +43,18 @@ public class PessoaController implements IPessoaController {
 		}
 	}
 	
-	// ENTIDADE FUNCIONÁRIO
-	
+	/**********************
+	 * ENTIDADE FUNCIONARIO
+	 */
 	public void addFuncionario(Funcionario funcionario) {
-		_clienteDAO.add(funcionario);
+		_funcionarioDAO.add(funcionario);
 	}
 
 	public Funcionario listFuncionario(Funcionario funcionario) {
 		if (funcionario != null && funcionario.getPrimaryKey() != null) {
-			return (Funcionario) _clienteDAO.listByPrimaryKey(funcionario.getClass(), funcionario.getPrimaryKey());
+			return (Funcionario) _funcionarioDAO.listByPrimaryKey(funcionario.getClass(), funcionario.getPrimaryKey());
 		} else {
-			return (Funcionario) _clienteDAO.listByObject(funcionario);
+			return (Funcionario) _funcionarioDAO.listByObject(funcionario);
 		}
 	}
 	
@@ -60,15 +62,15 @@ public class PessoaController implements IPessoaController {
 		return _funcionarioDAO.listAllFuncionario(funcionario);
 	}
 
-	public void updateCliente(Funcionario cliente) {
-		_clienteDAO.update(cliente);
+	public void updateFuncionario(Funcionario funcionario) {
+		_funcionarioDAO.update(funcionario);
 	}
 
-	public void removeCliente(Funcionario cliente) {
-		if (cliente != null && cliente.getPrimaryKey() != null) {
-			_clienteDAO.removeByPrimaryKey(cliente, cliente.getPrimaryKey());
+	public void removeFuncionario(Funcionario funcionario) {
+		if (funcionario != null && funcionario.getPrimaryKey() != null) {
+			_funcionarioDAO.removeByPrimaryKey(funcionario, funcionario.getPrimaryKey());
 		} else {
-			_clienteDAO.removeByObject(cliente);
+			_funcionarioDAO.removeByObject(funcionario);
 		}
 	}
 }
