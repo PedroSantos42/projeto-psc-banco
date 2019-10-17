@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import dao.conta.ContaCorrenteDAO;
 import dao.transacao.TransferenciaDAO;
+import org.junit.Ignore;
 import model.conta.Conta;
 import model.transacao.Transferencia;
 
@@ -51,7 +52,8 @@ public class TransferenciaDAOTests {
 		// assert
 		assertEquals(t.toString(), t2.toString());
 	}
-	
+
+	@Ignore
 	@Test
 	public void listByObject_ValidArg_ReturnValidRecord() {
 		// arrange
@@ -60,7 +62,8 @@ public class TransferenciaDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void listByPrimaryKey_ValidArg_ReturnValidRecord() {
 		// arrange
@@ -69,7 +72,8 @@ public class TransferenciaDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void removeByObject_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
@@ -78,7 +82,8 @@ public class TransferenciaDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void removeByPrimaryKey_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
@@ -87,7 +92,8 @@ public class TransferenciaDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void update_ValidArg_UpdateRecordInDatabase() {
 		// arrange

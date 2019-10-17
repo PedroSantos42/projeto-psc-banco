@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import dao.conta.ContaCorrenteDAO;
 import dao.transacao.EmprestimoDAO;
+import org.junit.Ignore;
 import model.conta.Conta;
 import model.transacao.Emprestimo;;
 
@@ -50,7 +51,8 @@ public class EmprestimoDAOTests {
 		// assert
 		assertEquals(e.toString(), e2.toString());
 	}
-	
+
+	@Ignore
 	@Test
 	public void listByObject_ValidArg_ReturnValidRecord() {
 		// arrange
@@ -59,7 +61,8 @@ public class EmprestimoDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void listByPrimaryKey_ValidArg_ReturnValidRecord() {
 		// arrange
@@ -68,7 +71,8 @@ public class EmprestimoDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void removeByObject_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
@@ -77,7 +81,8 @@ public class EmprestimoDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void removeByPrimaryKey_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
@@ -86,7 +91,8 @@ public class EmprestimoDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void update_ValidArg_UpdateRecordInDatabase() {
 		// arrange
