@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 
-import contract.models.ICliente;
+import contract.models.pessoa.ICliente;
 import model.Endereco;
 
 @Entity(name = "Cliente")
