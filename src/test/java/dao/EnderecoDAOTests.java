@@ -1,9 +1,13 @@
 package dao;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import model.Endereco;
@@ -46,6 +50,7 @@ public class EnderecoDAOTests {
 		assertEquals(e.toString(), e2.toString());
 	}
 	
+	@Ignore
 	@Test
 	public void listByObject_ValidArg_ReturnValidRecord() {
 		// arrange
@@ -54,7 +59,8 @@ public class EnderecoDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void listByPrimaryKey_ValidArg_ReturnValidRecord() {
 		// arrange
@@ -63,7 +69,8 @@ public class EnderecoDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void removeByObject_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
@@ -72,7 +79,8 @@ public class EnderecoDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void removeByPrimaryKey_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
@@ -81,7 +89,8 @@ public class EnderecoDAOTests {
 		
 		// assert
 	}
-	
+
+	@Ignore
 	@Test
 	public void update_ValidArg_UpdateRecordInDatabase() {
 		// arrange
@@ -89,5 +98,25 @@ public class EnderecoDAOTests {
 		// act
 		
 		// assert
+	}
+	
+	@Test
+	public void listAll_ValidArg_ReturnAllRecordsFromDatabase() {
+		// arrange
+		int numero = 7;
+		String logradouro = "logradouro 7";
+		String complemento = "complemento 7";
+		String bairro = "bairro 7";
+		String cidade = "cidade 7";
+		String uf = "uf 7";
+		String cep = "cep 7";
+		
+		Endereco endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, uf, cep);
+		
+		// act
+		ArrayList<Endereco> list = (ArrayList<Endereco>) _dao.listAllEndereco(endereco);
+		
+		// assert
+		assertTrue(list.size() == 1);
 	}
 }
