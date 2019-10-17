@@ -7,6 +7,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import dao.EnderecoDAOTests;
+import dao.FuncionarioDAOTests;
 import dao.TransferenciaDAOTests;
 import util.UtilJPA;
 import dao.ClienteDAOTests;
@@ -18,6 +19,7 @@ import dao.EmprestimoDAOTests;;
 @SuiteClasses({
 	EnderecoDAOTests.class,
 	ClienteDAOTests.class,
+	FuncionarioDAOTests.class,
 	ContaCorrenteDAOTests.class,
 	ContaPoupancaDAOTests.class,
 	EmprestimoDAOTests.class,
