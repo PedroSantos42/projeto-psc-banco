@@ -35,7 +35,7 @@ public class LoggerDAOTests {
 	@Test
 	public void log_ValidErrorMessage_WriteToLoggerFile() throws IOException {
 		// arrange
-		String message = "Mensagem de erro teste";
+		String message = "Mensagem logger teste";
 		
 		// act
 		_logger.log(message);
