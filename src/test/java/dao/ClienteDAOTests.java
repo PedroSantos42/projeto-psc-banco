@@ -158,7 +158,7 @@ public class ClienteDAOTests {
 
 		// act
 		_dao.add(c);
-		_dao.removeByObject(c);
+		_dao.removeByPrimaryKey(c, c.getPrimaryKey());
 
 		c = new Cliente();
 		c.setId(id);
@@ -223,6 +223,6 @@ public class ClienteDAOTests {
 		ArrayList<Cliente> list = (ArrayList<Cliente>) _dao.listAllCliente(c);
 		
 		// assert
-		assertTrue(list.size() == 3);
+		assertTrue(list.size() > 1);
 	}
 }

@@ -9,8 +9,10 @@ import java.util.ArrayList;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import dao.conta.ContaPoupancaDAO;
 import dao.pessoa.ClienteDAO;
@@ -18,6 +20,7 @@ import model.conta.ContaCorrente;
 import model.conta.ContaPoupanca;
 import model.pessoa.Pessoa;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ContaPoupancaDAOTests {
 
 	private ContaPoupancaDAO _dao = new ContaPoupancaDAO();
@@ -34,7 +37,7 @@ public class ContaPoupancaDAOTests {
 	}
 
 	@Test
-	public void add_ValidArg_AddToDatabase() {
+	public void _01_add_ValidArg_AddToDatabase() {
 		// arrange
 		int id = 7;
 		int numeroConta = 7;
@@ -57,7 +60,7 @@ public class ContaPoupancaDAOTests {
 	}
 
 	@Test
-	public void listByObject_ValidArg_ReturnValidRecord() {
+	public void _02_listByObject_ValidArg_ReturnValidRecord() {
 		// arrange
 		int id = 8;
 		int numeroConta = 8;
@@ -80,7 +83,7 @@ public class ContaPoupancaDAOTests {
 	}
 
 	@Test
-	public void listByPrimaryKey_ValidArg_ReturnValidRecord() {
+	public void _03_listByPrimaryKey_ValidArg_ReturnValidRecord() {
 		// arrange
 		int id = 7;
 		ContaPoupanca contaPoupanca = new ContaPoupanca();
@@ -95,7 +98,7 @@ public class ContaPoupancaDAOTests {
 	}
 
 	@Test
-	public void removeByObject_ValidArg_RemoveRecordFromDatabase() {
+	public void _04_removeByObject_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
 		int id = 9;
 		int numeroConta = 9;
@@ -122,7 +125,7 @@ public class ContaPoupancaDAOTests {
 
 	@Ignore
 	@Test
-	public void removeByPrimaryKey_ValidArg_RemoveRecordFromDatabase() {
+	public void _05_removeByPrimaryKey_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
 
 		// act
@@ -131,7 +134,7 @@ public class ContaPoupancaDAOTests {
 	}
 
 	@Test
-	public void update_ValidArg_UpdateRecordInDatabase() {
+	public void _06_update_ValidArg_UpdateRecordInDatabase() {
 		// arrange
 		int id = 10;
 		int numeroConta = 33;
@@ -158,7 +161,7 @@ public class ContaPoupancaDAOTests {
 	}
 
 	@Test
-	public void listAll_ValidArg_ReturnAllRecordsFromDatabase() {
+	public void _07_listAll_ValidArg_ReturnAllRecordsFromDatabase() {
 
 		// arrange
 		int id = 11;

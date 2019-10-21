@@ -131,8 +131,8 @@ public class Endereco implements IEndereco {
 	}
 
 	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
-//		pessoa.setEndereco(this); verificar se já eh nulo
+		if (this.pessoa == null)
+			this.pessoa = pessoa;
 	}
 
 	public Object getPrimaryKey() {
