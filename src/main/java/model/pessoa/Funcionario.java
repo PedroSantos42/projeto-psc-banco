@@ -17,11 +17,19 @@ public class Funcionario extends Pessoa implements IFuncionario {
 
 	@Column(name = "data_contratacao", nullable = true)
 	private Date dataContratacao;
-	
-	public Funcionario() {}
+
+	public Funcionario() { }
 
 	public Funcionario(int id, String cpf, String nome, Date dataNascimento, Endereco endereco, Date dataContratacao) {
 		super(id, cpf, nome, dataNascimento, endereco);
+		this.dataContratacao = dataContratacao;
+	}
+
+	public Date getDataContratacao() {
+		return dataContratacao;
+	}
+
+	public void setDataContratacao(Date dataContratacao) {
 		this.dataContratacao = dataContratacao;
 	}
 

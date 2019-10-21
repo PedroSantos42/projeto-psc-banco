@@ -132,7 +132,7 @@ public class Endereco implements IEndereco {
 
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
-		pessoa.setEndereco(this);
+//		pessoa.setEndereco(this); verificar se já eh nulo
 	}
 
 	public Object getPrimaryKey() {

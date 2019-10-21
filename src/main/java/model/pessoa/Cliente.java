@@ -23,6 +23,14 @@ public class Cliente extends Pessoa implements ICliente {
 		super(id, cpf, nome, dataNascimento, endereco);
 		this.dataCadastro = dataCadastro;
 	}
+	
+	public Date getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
 
 	public String toString() {
 		return "ID: " + getId() + ", CPF: " + getCpf();
