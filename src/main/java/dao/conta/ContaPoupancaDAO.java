@@ -26,9 +26,9 @@ public class ContaPoupancaDAO extends AbstractDAO implements IContaPoupancaDAO {
 		loggerInfo = className + "." + methodName + " - " + myEntity.toString();
 		_logger.log(loggerInfo);
 
-		String sQuery = "FROM Pessoa WHERE tipo_conta = 'ContaPoupanca'";
+		String sQuery = "FROM Conta WHERE tipo_conta = 'ContaPoupanca'";
 
-		TypedQuery<ContaPoupanca> tQuery = em.createQuery(sQuery, ContaPoupanca.class);
+		TypedQuery<Conta> tQuery = em.createQuery(sQuery, Conta.class);
 
 		List<ContaPoupanca> records = (List<ContaPoupanca>) ((List<?>) tQuery.getResultList());
 

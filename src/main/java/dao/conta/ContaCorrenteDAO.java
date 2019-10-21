@@ -26,9 +26,9 @@ public class ContaCorrenteDAO extends AbstractDAO implements IContaCorrenteDAO {
 		loggerInfo = className + "." + methodName + " - " + myEntity.toString();
 		_logger.log(loggerInfo);
 
-		String sQuery = "FROM Pessoa WHERE tipo_conta = 'ContaCorrente'";
+		String sQuery = "FROM Conta WHERE tipo_conta = 'ContaCorrente'";
 
-		TypedQuery<ContaCorrente> tQuery = em.createQuery(sQuery, ContaCorrente.class);
+		TypedQuery<Conta> tQuery = em.createQuery(sQuery, Conta.class);
 
 		List<ContaCorrente> records = (List<ContaCorrente>) ((List<?>) tQuery.getResultList());
 
