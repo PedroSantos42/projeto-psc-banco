@@ -15,7 +15,6 @@ import org.junit.runners.MethodSorters;
 
 import dao.conta.ContaCorrenteDAO;
 import dao.pessoa.ClienteDAO;
-import org.junit.Ignore;
 import model.conta.ContaCorrente;
 import model.pessoa.Pessoa;
 
@@ -145,20 +144,37 @@ public class ContaCorrenteDAOTests {
 		assertNull(contaCorrente);
 	}
 
-	@Ignore
 	@Test
 	public void _06_removeByPrimaryKey_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
+		int id = 5;
+		int numeroConta = 5;
+		double saldo = 155.5;
+		String situacao = "a";
+
+		Pessoa p = new Pessoa();
+		p.setId(1);
+		p = (Pessoa) new ClienteDAO().listByPrimaryKey(p.getClass(), p.getPrimaryKey());
+
+		ContaCorrente contaCorrente = new ContaCorrente(id, numeroConta, saldo, situacao, p, null);
 
 		// act
+		_dao.add(contaCorrente);
+		_dao.removeByPrimaryKey(contaCorrente, contaCorrente.getPrimaryKey());
+
+		contaCorrente = new ContaCorrente();
+		contaCorrente.setId(id);
+		contaCorrente = (ContaCorrente) _dao.listByPrimaryKey(contaCorrente.getClass(), contaCorrente.getPrimaryKey());
 
 		// assert
+		assertNull(contaCorrente);
+
 	}
 
 	@Test
-	public void _06_update_ValidArg_UpdateRecordInDatabase() {
+	public void _08_update_ValidArg_UpdateRecordInDatabase() {
 		// arrange
-		int id = 5;
+		int id = 6;
 		int numeroConta = 6;
 		double saldo = 245.0;
 		String situacao = "b";
@@ -173,7 +189,6 @@ public class ContaCorrenteDAOTests {
 		_dao.add(contaCorrente);
 		contaCorrente.setSaldo(500);
 		contaCorrente.setSituacao("a");
-		contaCorrente.setNumeroConta(5);
 		_dao.update(contaCorrente);
 
 		ContaCorrente contaCorrente2 = (ContaCorrente) _dao.listByObject(contaCorrente);
@@ -184,11 +199,11 @@ public class ContaCorrenteDAOTests {
 	}
 
 	@Test
-	public void _07_listAll_ValidArg_ReturnAllRecordsFromDatabase() {
+	public void _09_listAll_ValidArg_ReturnAllRecordsFromDatabase() {
 
 		// arrange
-		int id = 6;
-		int numeroConta = 6;
+		int id = 7;
+		int numeroConta = 7;
 		double saldo = 85.5;
 		String situacao = "a";
 
