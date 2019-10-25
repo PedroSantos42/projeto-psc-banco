@@ -1,5 +1,8 @@
 package contract.dao;
 
-public interface IEmprestimoDAO {
+import java.util.List;
+import model.transacao.Emprestimo;
 
+public interface IEmprestimoDAO {
+	List<Emprestimo> listAllEmprestimo(Emprestimo Emprestimo);
 }

@@ -27,7 +27,6 @@ public class Transacao implements ITransacao {
 	@Column (name = "id_transacao")
 	private int id;
 	
-	//Dúvida!
 	@Column (name = "numero_conta", nullable = false)
 	private int numeroConta;
 	
