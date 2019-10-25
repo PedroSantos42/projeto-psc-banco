@@ -1,6 +1,8 @@
 package dao;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.util.Date;
 
@@ -10,7 +12,6 @@ import org.junit.Test;
 
 import dao.conta.ContaCorrenteDAO;
 import dao.transacao.TransferenciaDAO;
-import org.junit.Ignore;
 import model.conta.Conta;
 import model.transacao.Transferencia;
 
@@ -53,53 +54,111 @@ public class TransferenciaDAOTests {
 		assertEquals(t.toString(), t2.toString());
 	}
 
-	@Ignore
 	@Test
 	public void listByObject_ValidArg_ReturnValidRecord() {
 		// arrange
+		int id = 2;
+		int numeroConta = 1;
+		float valorTransacao = 25.90f;
+		Date dataTransacao = new Date();
 		
+		Conta conta = new Conta();
+		conta.setId(1);
+		
+		conta = (Conta) new ContaCorrenteDAO().listByPrimaryKey(conta.getClass(), conta.getPrimaryKey());
+		
+		Transferencia t = new Transferencia(id, numeroConta, valorTransacao, dataTransacao, conta);
 		// act
+		_dao.add(t);
 		
+		Transferencia t2 = (Transferencia) _dao.listByObject(t);
 		// assert
+		assertEquals(t.toString(), t2.toString());
 	}
 
-	@Ignore
 	@Test
 	public void listByPrimaryKey_ValidArg_ReturnValidRecord() {
 		// arrange
-		
+		int id = 2;
+		Transferencia t = new Transferencia();
+		t.setId(id);
 		// act
-		
+		Transferencia t2 = (Transferencia) _dao.listByPrimaryKey(t.getClass(), t.getPrimaryKey());
 		// assert
+		
+		assertNotNull(t2);	
 	}
 
-	@Ignore
 	@Test
 	public void removeByObject_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
+		int id = 2;
+		int numeroConta = 1;
+		float valorTransacao = 25.90f;
+		Date dataTransacao = new Date();
 		
+		Conta conta = new Conta();
+		conta.setId(1);
+		
+		conta = (Conta) new ContaCorrenteDAO().listByPrimaryKey(conta.getClass(), conta.getPrimaryKey());
+		
+		Transferencia t = new Transferencia(id, numeroConta, valorTransacao, dataTransacao, conta);
 		// act
+		_dao.add(t);
+		_dao.removeByObject(t);
 		
+		t = new Transferencia();
+		t.setId(id);
+		t = (Transferencia) _dao.listByPrimaryKey(t.getClass(), t.getPrimaryKey());
 		// assert
+		assertNull(t);
 	}
 
-	@Ignore
 	@Test
 	public void removeByPrimaryKey_ValidArg_RemoveRecordFromDatabase() {
 		// arrange
+		int id = 2;
+		int numeroConta = 1;
+		float valorTransacao = 25.90f;
+		Date dataTransacao = new Date();
 		
+		Conta conta = new Conta();
+		conta.setId(1);
+		
+		conta = (Conta) new ContaCorrenteDAO().listByPrimaryKey(conta.getClass(), conta.getPrimaryKey());
+		
+		Transferencia t = new Transferencia(id, numeroConta, valorTransacao, dataTransacao, conta);
 		// act
+		_dao.add(t);
+		_dao.removeByPrimaryKey(t, t.getPrimaryKey());
 		
+		t = new Transferencia();
+		t.setId(id);
+		t = (Transferencia) _dao.listByPrimaryKey(t.getClass(), t.getPrimaryKey());
 		// assert
+		assertNull(t);
 	}
 
-	@Ignore
 	@Test
 	public void update_ValidArg_UpdateRecordInDatabase() {
 		// arrange
+		int id = 2;
+		int numeroConta = 1;
+		float valorTransacao = 25.90f;
+		Date dataTransacao = new Date();
 		
+		Conta conta = new Conta();
+		conta.setId(1);
+		
+		conta = (Conta) new ContaCorrenteDAO().listByPrimaryKey(conta.getClass(), conta.getPrimaryKey());
+		
+		Transferencia t = new Transferencia(id, numeroConta, valorTransacao, dataTransacao, conta);
 		// act
+		_dao.add(t);
+		_dao.update(t);
 		
+		Transferencia t2 = (Transferencia) _dao.listByObject(t);
 		// assert
+		assertEquals(t.toString(), t2.toString());
 	}
 }
