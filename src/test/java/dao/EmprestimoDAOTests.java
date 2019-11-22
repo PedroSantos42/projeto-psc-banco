@@ -89,7 +89,7 @@ public class EmprestimoDAOTests {
 		Emprestimo e = new Emprestimo ();
 		e.setId(id);
 		// act
-		Emprestimo e2 = (Emprestimo) _dao.listByPrimaryKey(e.getClass(), e.getPrimaryKey());)
+		Emprestimo e2 = (Emprestimo) _dao.listByPrimaryKey(e.getClass(), e.getPrimaryKey());
 		// assert
 		assertNotNull(e2);
 		

@@ -24,7 +24,7 @@ public class LoggerDAOTests {
 	@BeforeClass
 	public static void setUp() {
 		System.out.println("Iniciando Logger testes...");
-		_logger = new LoggerDAO();
+		_logger = new LoggerDAO().getInstance();
 	}
 	
 	@AfterClass

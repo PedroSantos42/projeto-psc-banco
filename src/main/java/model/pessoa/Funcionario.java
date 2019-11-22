@@ -3,7 +3,7 @@ package model.pessoa;
 import java.util.Date;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -12,7 +12,7 @@ import model.Endereco;
 
 @Entity(name = "Funcionario")
 @Table(name = "funcionario")
-@DiscriminatorColumn(name = "tipo_pessoa")
+@DiscriminatorValue(value = "tipo_pessoa")
 public class Funcionario extends Pessoa implements IFuncionario {
 
 	@Column(name = "data_contratacao", nullable = true)

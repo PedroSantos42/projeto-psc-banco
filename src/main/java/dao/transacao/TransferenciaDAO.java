@@ -28,8 +28,10 @@ public class TransferenciaDAO extends AbstractDAO implements ITransferenciaDAO  
 		_logger.log(loggerInfo);
 		
 		String sQuery = "FROM Transacao WHERE tipo_transacao = 'Transferencia'";
+		
 		TypedQuery<Transacao> tQuery = em.createQuery(sQuery, Transacao.class);
-		List<Transferencia> records = (List<Transferencia>) ((List<?>)) tQuery.getResultList();
+		
+		List<Transferencia> records = (List<Transferencia>) ((List<?>)tQuery.getResultList());
 		
 		if(closeEm)
 			em.close();

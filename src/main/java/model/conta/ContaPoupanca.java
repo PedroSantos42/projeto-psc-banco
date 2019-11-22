@@ -2,7 +2,7 @@ package model.conta;
 
 import java.util.List;
 
-import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 import contract.models.conta.IContaPoupanca;
@@ -10,7 +10,7 @@ import model.pessoa.Pessoa;
 import model.transacao.Transacao;
 
 @Entity(name = "ContaPoupanca")
-@DiscriminatorColumn(name = "ContaPoupanca")
+@DiscriminatorValue(value = "ContaPoupanca")
 public class ContaPoupanca extends Conta implements IContaPoupanca {
 
 	public ContaPoupanca() {

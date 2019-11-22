@@ -1,12 +1,14 @@
 package model.transacao;
 
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.util.Date;
 import contract.models.transacao.IEmprestimo;
 import model.conta.Conta;
 
 @Entity
+@DiscriminatorValue(value = "tipo_transacao")
 public class Emprestimo extends Transacao implements IEmprestimo {
 	
 	public Emprestimo () {

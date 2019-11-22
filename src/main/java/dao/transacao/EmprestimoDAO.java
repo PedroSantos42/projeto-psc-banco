@@ -27,8 +27,10 @@ public class EmprestimoDAO extends AbstractDAO implements IEmprestimoDAO {
 		_logger.log(loggerInfo);
 		
 		String sQuery = "FROM Transacao WHERE tipo_transacao = 'Emprestimo'";
+		
 		TypedQuery<Transacao> tQuery = em.createQuery(sQuery, Transacao.class);
-		List<Emprestimo> records = (List<Emprestimo>) ((List<?>)) tQuery.getResultList();
+		
+		List<Emprestimo> records = (List<Emprestimo>) (List<?>) tQuery.getResultList();
 		
 		if(closeEm)
 			em.close();

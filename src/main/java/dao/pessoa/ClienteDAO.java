@@ -30,7 +30,7 @@ public class ClienteDAO extends AbstractDAO implements IClienteDAO {
 		
 		TypedQuery<Pessoa> tQuery = em.createQuery(sQuery, Pessoa.class);
 		
-		List<Cliente> records = (List<Cliente>) ((List<?>)tQuery.getResultList());
+		List<Cliente> records = (List<Cliente>) (List<?>) tQuery.getResultList();
 		
 		if (closeEm)
 			em.close();

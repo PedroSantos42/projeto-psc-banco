@@ -1,13 +1,13 @@
 package model.transacao;
 
-import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.util.Date;
 import contract.models.transacao.ITransferencia;
 import model.conta.Conta;
 
 @Entity(name = "Transferencia")
-@DiscriminatorColumn(name = "TransacaoTransferencia")
+@DiscriminatorValue(value = "TransacaoTransferencia")
 public class Transferencia extends Transacao implements ITransferencia {
 	
 	public Transferencia () {
