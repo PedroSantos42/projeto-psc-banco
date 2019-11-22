@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
@@ -21,7 +21,7 @@ import model.conta.Conta;
 @Entity(name = "Pessoa")
 @Table(name = "pessoa")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorValue(value = "tipo_pessoa")
+@DiscriminatorColumn(name = "tipo_pessoa")
 public class Pessoa implements IPessoa {
 
 	@Id

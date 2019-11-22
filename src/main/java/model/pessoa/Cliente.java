@@ -3,14 +3,14 @@ package model.pessoa;
 import java.util.Date;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 import contract.models.pessoa.ICliente;
 import model.Endereco;
 
 @Entity(name = "Cliente")
-@DiscriminatorColumn(name = "PessoaCliente")
+@DiscriminatorValue(value = "PessoaCliente")
 public class Cliente extends Pessoa implements ICliente {
 
 	@Column(name = "data_cadastro", nullable = true)
