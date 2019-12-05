@@ -12,7 +12,7 @@ import model.Endereco;
 
 @Entity(name = "Funcionario")
 @Table(name = "funcionario")
-@DiscriminatorValue(value = "tipo_pessoa")
+@DiscriminatorValue(value = "PessoaFuncionario")
 public class Funcionario extends Pessoa implements IFuncionario {
 
 	@Column(name = "data_contratacao", nullable = true)
